@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { api } from "../../config/api";
 import { Link } from "react-router-dom";
+import  style from "./style.module.css"
 
 interface Form {
   username: string;
@@ -32,24 +33,35 @@ function Login() {
   }
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label>UserName</label>
+        <div className={style.bgimage}>
+
+       
+        <div className={style.formcontainer}>
+      <form className={style.flex} onSubmit={handleSubmit}>
+        <label className={style.label}>UserName</label>
         <input
           type="text"
           name="username"
           pattern="\w{3,}"
           onChange={handleChange}
+          className={style.input}
+          required
         />
-        <label>Password</label>
+        <label  className={style.label}>Password</label>
         <input
           type="password"
           pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#_!])[0-9a-zA-Z$*&@#_!]{8,}$"
           onChange={handleChange}
           name={"password"}
+          className={style.input}
+          required
         />
-        <button type="submit">Enviar</button>
+        <button className={style.botao} type="submit">Entrar</button>
       </form>
-      <Link to="/sigin">Criar Usuario</Link>
+      </div>
+
+      <Link className={style.abiriconta} to="/sigin">Abra sua conta</Link>
+      </div>
     </>
   );
 }

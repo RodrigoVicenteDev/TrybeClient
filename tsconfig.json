@@ -1,12 +1,10 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "allowJs": true,
+    "isolatedModules": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -16,12 +14,10 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+
     "noEmit": true,
     "jsx": "react-jsx",
-    "strictNullChecks":false
+    "strictNullChecks": false
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

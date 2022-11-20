@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { api } from "../config/api";
+
+import { api } from "../../config/api";
+import style from "./style.module.css";
+
 interface Form {
-    username: string;
-    password: string;
-    confirmpassword: string;
-  }
+  username: string;
+  password: string;
+  confirmpassword: string;
+}
 
 function Sigin() {
-  
-
   const [versenha, setVersenha] = useState(false);
   const [form, setForm] = useState<Form>({
     username: "",
@@ -41,13 +42,18 @@ function Sigin() {
 
   return (
     <>
-      <form onSubmit={Handlesubmit}>
+      <div className={style.cabacalho}>
+        <h1>SigIn</h1>
+      </div>
+      <form className={style.flex} onSubmit={Handlesubmit}>
         <label>UserName</label>
         <input
           type="text"
           name="username"
           pattern="\w{3,}"
+          className={style.input}
           onChange={Handlechange}
+          required
         />
         <label>Password</label>
         <input
@@ -55,17 +61,32 @@ function Sigin() {
           pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#_!])[0-9a-zA-Z$*&@#_!]{8,}$"
           onChange={Handlechange}
           name={"password"}
+          className={style.input}
+          required
         />
-        <label> Conforme a Senha</label>
+        <label> Confirme a Senha</label>
         <input
           type={versenha ? "text" : "password"}
           pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#_!])[0-9a-zA-Z$*&@#_!]{8,}$"
           onChange={Handlechange}
           name={"confirmpassword"}
+          className={style.input}
+          required
         />
-        <button onClick={see}>Olho</button>
-        <button type="submit">Enviar</button>
+        <button className={style.olho} onClick={see}>
+          Mostrar senha
+        </button>
+        <button className={style.botao} type="submit">
+          Enviar
+        </button>
       </form>
+      <div className={style.p}>
+        <p >O usuário deve ter no mínimo 3 caracteres</p>
+        <p>
+          A senha deve conter no mínimo 8 caracteres sendo pelo menos uma
+          maiúscula, um caractere especial e um número
+        </p>
+      </div>
     </>
   );
 }

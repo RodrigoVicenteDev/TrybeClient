@@ -1,0 +1,80 @@
+.input {
+    border-radius: 50px;
+    border: solid black 3px;
+    margin:10px;
+    height: 30px;
+    font-size: 20px;
+    padding-left: 10px;
+    
+}
+.input:focus{
+    outline-style: none;
+    box-shadow: none;
+    border-color: rgb(148, 247, 0);
+}
+
+.label{
+    font-weight: bolder;
+}
+
+.botao {
+    border: 0;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: rgb(101, 100, 100);
+    color: white;
+    margin: 10px;
+    font-size: 20px;
+
+}
+
+.botao:active {
+    transform: scale(0.98);
+    
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+.abiriconta{
+    text-decoration: none;
+    color: black;
+    background-color: rgb(148, 247, 0);
+    border-radius: 5px;
+    margin: 20px;
+    padding: 20px;
+    font-weight: 1000;
+    font-size: 20px;
+
+}
+
+.abiriconta:active {
+    transform: scale(0.98);
+    
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.formsize{
+
+}
+
+.bgimage{
+    background-image: url("../../assets/imgs/bglogin.png");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    
+}
+
+.formcontainer{
+    background-color: rgba(0, 0, 0, 0.286);
+    margin:10px;
+    padding-top: 20px;
+    border-radius: 5px;
+    
+}

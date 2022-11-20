@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "../../config/api";
 import Filtro from "../filtro";
-import { useForm } from 'react-hook-form';
+import { useForm } from "react-hook-form";
 
 interface Props {
   reload: boolean;
@@ -23,7 +23,7 @@ function Extrato({ reload, setReload }: Props) {
   const [loading, setloading] = useState(false);
   const [queryBuilder, setQueryBuilder] = useState("");
   const [filtro, setFiltro] = useState(false);
-  const {  reset } = useForm();
+  const { reset } = useForm();
   const [query, setQuery] = useState({
     credito: "",
     debito: "",
@@ -92,9 +92,9 @@ function Extrato({ reload, setReload }: Props) {
       setQueryBuilder(`data=${query.data}&debito=${query.debito}`);
     }
 
-    if (  query.credito === "true" && query.debito === "true") {
-       window.alert("Limpe os filtros");
-      }
+    if (query.credito === "true" && query.debito === "true") {
+      window.alert("Limpe os filtros");
+    }
 
     setFiltro(true);
   }
@@ -104,9 +104,8 @@ function Extrato({ reload, setReload }: Props) {
       credito: "",
       debito: "",
       data: "",
-     
     });
-    reset()
+    reset();
 
     setFiltro(false);
   }
@@ -139,10 +138,10 @@ function Extrato({ reload, setReload }: Props) {
         />{" "}
         data
         <button type="submit"> filtrar </button>
+        
       </form>
-      <button type="submit" onClick={limpar}>
-        {" "}
-        Limpar Filtros{" "}
+      <button  onClick={limpar}>
+        Limpar Filtros
       </button>
       {filtro && <Filtro queryBuilder={queryBuilder} />}
       {!filtro && (
