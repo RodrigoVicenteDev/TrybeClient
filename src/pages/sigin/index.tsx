@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import {Link} from "react-router-dom"  
 import { api } from "../../config/api";
 import style from "./style.module.css";
 
@@ -86,6 +86,7 @@ function Sigin() {
           A senha deve conter no mínimo 8 caracteres sendo pelo menos uma
           maiúscula, um caractere especial e um número
         </p>
+        <Link to="/"> Voltar para LogIn</Link>
       </div>
     </>
   );

@@ -1,0 +1,30 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    height: 100vh;
+    
+}
+
+.saldocontainer{
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+
+.containerinside{
+
+
+    
+     justify-content: center;
+     border: 1px solid #e9ecef;
+      
+      margin-top: 20px;
+      padding:10px;
+      border-radius:15px;
+       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+
+}

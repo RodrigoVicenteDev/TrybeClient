@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { api } from "../../config/api";
+import style from "./style.module.css";
 interface Props {
   reload: boolean;
   setReload: React.Dispatch<React.SetStateAction<boolean>>;
@@ -37,24 +38,35 @@ function Transacao({ reload, setReload }: Props) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label>Nome para credito</label>
+    <div className={style.flex}>
+        <h3>Realizar transferência </h3>
+      <form className={style.flex} onSubmit={handleSubmit}>
+        <div className={style.flex2}>
+        <label className={style.label}>Nome para credito</label>
         <input
           type="text"
           value={form.username}
           name="username"
           pattern="\w{3,}"
           onChange={Handlechange}
+          className={style.input}
         />
-        <label>Valor</label>
+        </div>
+        <div className={style.flex2}>
+        <label className={style.label}>Valor</label>
         <input
           type="number"
           value={form.valor}
           name="valor"
           onChange={Handlechange}
+          className={style.input}
+          
         />
-        <button type="submit">Enviar</button>
+        <button className={style.botao} type="submit">Enviar</button>
+        </div>
+        
       </form>
+      </div>
     </>
   );
 }

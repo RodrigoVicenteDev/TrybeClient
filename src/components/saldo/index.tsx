@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { api } from "../../config/api";
+import  style from "./style.module.css"
 
 interface Props {
   reload: boolean;
@@ -35,7 +36,11 @@ function Saldo({ reload, setReload }: Props) {
   }, [reload]);
 
   console.log(user);
-  return <> {loading&& <h1>{user.accounts.balance}</h1>} </>;
+  return <> {loading&& 
+    <>
+    <h1>Bem-vindo, {user.username}</h1>
+
+  <h2 className={style.saldo}>Saldo: {user.accounts.balance}</h2></>} </>;
 }
 
 export default Saldo;

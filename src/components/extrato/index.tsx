@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { api } from "../../config/api";
 import Filtro from "../filtro";
 import { useForm } from "react-hook-form";
-
+import style from "./style.module.css";
 interface Props {
   reload: boolean;
   setReload: React.Dispatch<React.SetStateAction<boolean>>;
@@ -112,35 +112,45 @@ function Extrato({ reload, setReload }: Props) {
 
   return (
     <>
-      <h3> filtros</h3>
-      <form onSubmit={HandleSubmit}>
+      <h3> Extratos</h3>
+      <form className={style.flex} onSubmit={HandleSubmit}>
+        <div>
         <input
           type="checkbox"
           value="true"
           id="credito"
           name="query"
           onChange={handleChangeradio}
-        />{" "}
-        credito
+        />
+       <label className={style.label}>creditos</label> 
         <input
           type="checkbox"
           id="debito"
           value="true"
           name="query"
           onChange={handleChangeradio}
-        />{" "}
-        debito
+        />
+        <label className={style.label}>debitos</label> 
+        </div>
+        <div  className={style.flex}>
+            <div>
+        <label className={style.label}>data</label> 
         <input
           type="date"
           value={query.data}
           name="data"
           onChange={handleChangedata}
-        />{" "}
-        data
-        <button type="submit"> filtrar </button>
+          className={style.input}
+        />
+        </div>
         
+       
+        <button className={style.botao}type="submit"> filtrar </button>
+        </div>
       </form>
-      <button  onClick={limpar}>
+     
+      <div  className={style.flex}>
+      <button className={style.botao} onClick={limpar}>
         Limpar Filtros
       </button>
       {filtro && <Filtro queryBuilder={queryBuilder} />}
@@ -188,6 +198,7 @@ function Extrato({ reload, setReload }: Props) {
           </table>
         </div>
       )}
+      </div>
     </>
   );
 }

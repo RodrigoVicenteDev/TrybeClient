@@ -2,9 +2,10 @@
     border-radius: 50px;
     border: solid black 3px;
     margin:10px;
-    height: 30px;
-    font-size: 20px;
+    height: 15px;
+    font-size: 15px;
     padding-left: 10px;
+    width: 100px;
     
 }
 .input:focus{
@@ -13,35 +14,39 @@
     border-color: rgb(148, 247, 0);
 }
 
+.label{
+    font-weight: bolder;
+}
+
 .botao {
     border: 0;
     border-radius: 5px;
     padding: 20px;
     background-color: rgb(101, 100, 100);
     color: white;
-    margin: 20px;
-    font-size: 20px;
+    margin: 0px;
+    font-size: 15px;
     cursor: pointer;
+    height: 8px;
+    display: flex;
+    align-items: center;
 
 }
 
 .botao:active {
+   
     transform: scale(0.98);
-    
+   
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-}
-.olho{
-    background-color: white;
-    border: 0px;
-
 }
 .flex{
     display: flex;
     flex-direction: column;
+    align-items: center;
 
 }
-
-.p{
-    margin:20px
+.flex2{
+    display: flex;
+    align-items: center;
 
 }
