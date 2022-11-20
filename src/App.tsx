@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import * as React from 'react';
+import {Route ,Routes } from "react-router-dom"
+import Sigin from './pages';
 import './App.css';
+import Login from './pages/login';
+import Paginaprincipal from './pages/paginaprincipal';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+      <Route path="/sigin" element= {<Sigin/>}/>
+      <Route path="/" element= {<Login/>}/>
+      <Route path="principal" element={<Paginaprincipal/>} />
+
+
+      </Routes>
+     
     </div>
   );
 }
