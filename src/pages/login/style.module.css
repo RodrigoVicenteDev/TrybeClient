@@ -60,7 +60,7 @@
 
 
 .bgimage{
-    background-image: url("../../assets/imgs/bglogin.png");
+   /*  background-image: url("../../assets/imgs/bglogin.png"); */
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -69,6 +69,15 @@
 
     
 }
+.bgimage2{
+     background-image: url("../../assets/imgs/logo.png");
+     background-size:auto;
+     background-repeat: no-repeat;
+     height: 30vh;
+     
+ 
+     
+ }
 
 .formcontainer{
     background-color: rgba(0, 0, 0, 0.286);
@@ -78,42 +87,67 @@
     
 }
 
-
-@media all and (min-width:576px) and (max-width:767px){
-    .bgimage{
-        background-color: black;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    
-        
-    }
+.h1{
+    background-color: black;
+    color: white;
+    font-size: 100px;
    
+    padding-top: 50px;
+    height: 15vh;
 }
 
-@media all and (min-width:768px) and (max-width:991px){
-    .bgimage{
-        background-color: black;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    
-        
+@media all and (max-width:767px){
+    .bg{
+        background-image: url("../../assets/imgs/background.png");
+        background-size: cover;
     }
+
+   .h1{
+    font-size: 50px;
+   }
+
+}
+@media all and (min-width:768px) and (max-width:991px){
+    .bg{
+        background-image: url("../../assets/imgs/bgimg.png");
+    }
+    .h1{
+        font-size: 55px;
+       }
+    .bgimage{
+        /*  background-image: url("../../assets/imgs/bglogin.png"); */
+         background-size: cover;
+         height: 100vh;
+         width: 50vw;
+         display: flex;
+         margin: auto;
+         flex-direction: column;
+         justify-content: center;
+     
+       
+    }
+    .h1{
+        font-size: 60px;
+       }
     
 }
 
 @media all and (min-width: 992px) {
-  
+    .bg{
+        background-image: url("../../assets/imgs/bgimg.png");
+    }
     .bgimage{
-        background-color: black;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
     
         
+         height: 100vh;
+         width: 20vw;
+         display: flex;
+         margin: auto;
+         flex-direction: column;
+         justify-content: center;
+     
+       
     }
+  
+   
 }

@@ -4,6 +4,7 @@ import { api } from "../../config/api";
 import { Link } from "react-router-dom";
 import  style from "./style.module.css"
 
+
 interface Form {
   username: string;
   password: string;
@@ -33,9 +34,12 @@ function Login() {
   }
   return (
     <>
+     
+     <h1 className={style.h1}> NG.CASHER</h1>
+     <div className={style.bg}>
         <div className={style.bgimage}>
 
-       
+     
         <div className={style.formcontainer}>
       <form className={style.flex} onSubmit={handleSubmit}>
         <label className={style.label}>UserName</label>
@@ -61,6 +65,7 @@ function Login() {
       </div>
 
       <Link className={style.abiriconta} to="/sigin">Abra sua conta</Link>
+      </div>
       </div>
     </>
   );
