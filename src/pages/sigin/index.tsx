@@ -42,8 +42,9 @@ function Sigin() {
 
   return (
     <>
-      <div className={style.cabacalho}>
-        <h1>SigIn</h1>
+    <div className={style.containerinside}>
+      <div  >
+        <h1 className={style.topo}>SigIn</h1>
       </div>
       <form className={style.flex} onSubmit={Handlesubmit}>
         <label>UserName</label>
@@ -87,6 +88,7 @@ function Sigin() {
           maiúscula, um caractere especial e um número
         </p>
         <Link to="/"> Voltar para LogIn</Link>
+      </div>
       </div>
     </>
   );

@@ -1,47 +1,95 @@
 .input {
-    border-radius: 50px;
-    border: solid black 3px;
-    margin:10px;
-    height: 30px;
-    font-size: 20px;
-    padding-left: 10px;
-    
+  border-radius: 50px;
+  border: solid black 3px;
+  margin: 10px;
+  height: 30px;
+  font-size: 20px;
+  padding-left: 10px;
 }
-.input:focus{
-    outline-style: none;
-    box-shadow: none;
-    border-color: rgb(148, 247, 0);
+.input:focus {
+  outline-style: none;
+  box-shadow: none;
+  border-color: rgb(148, 247, 0);
 }
 
 .botao {
-    border: 0;
-    border-radius: 5px;
-    padding: 20px;
-    background-color: rgb(101, 100, 100);
-    color: white;
-    margin: 20px;
-    font-size: 20px;
-    cursor: pointer;
-
+  border: 0;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: rgb(101, 100, 100);
+  color: white;
+  margin: 20px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .botao:active {
-    transform: scale(0.98);
+  transform: scale(0.98);
+
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+.olho {
+  background-color: white;
+  border: 0px;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.p {
+  margin: 20px;
+}
+
+.topo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media all and (min-width:576px) and (max-width:767px){
+    .containerinside {
+        justify-content: center;
+        border: 1px solid #e9ecef;
     
-    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-}
-.olho{
-    background-color: white;
-    border: 0px;
-
-}
-.flex{
-    display: flex;
-    flex-direction: column;
-
+        padding: 10px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        height: fit-content;
+      }
 }
 
-.p{
-    margin:20px
+@media all and (min-width:768px) and (max-width:991px){
+    .containerinside {
+        justify-content: center;
+        border: 1px solid #e9ecef;
+    
+        padding: 10px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        height: fit-content;
+      }
+}
 
+@media all and (min-width: 992px) {
+  .containerinside {
+    justify-content: center;
+    border: 1px solid #e9ecef;
+
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    height: fit-content;
+  }
 }

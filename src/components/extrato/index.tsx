@@ -115,89 +115,93 @@ function Extrato({ reload, setReload }: Props) {
       <h3> Extratos</h3>
       <form className={style.flex} onSubmit={HandleSubmit}>
         <div>
-        <input
-          type="checkbox"
-          value="true"
-          id="credito"
-          name="query"
-          onChange={handleChangeradio}
-        />
-       <label className={style.label}>creditos</label> 
-        <input
-          type="checkbox"
-          id="debito"
-          value="true"
-          name="query"
-          onChange={handleChangeradio}
-        />
-        <label className={style.label}>debitos</label> 
+          <input
+            type="checkbox"
+            value="true"
+            id="credito"
+            name="query"
+            onChange={handleChangeradio}
+          />
+          <label className={style.label}>Creditos</label>
+          <input
+            type="checkbox"
+            id="debito"
+            value="true"
+            name="query"
+            onChange={handleChangeradio}
+          />
+          <label className={style.label}>Debitos</label>
         </div>
-        <div  className={style.flex}>
-            <div>
-        <label className={style.label}>data</label> 
-        <input
-          type="date"
-          value={query.data}
-          name="data"
-          onChange={handleChangedata}
-          className={style.input}
-        />
-        </div>
-        
-       
-        <button className={style.botao}type="submit"> filtrar </button>
+        <div className={style.flex}>
+          <div>
+            <label className={style.label}>Data</label>
+            <input
+              type="date"
+              value={query.data}
+              name="data"
+              onChange={handleChangedata}
+              className={style.input}
+            />
+          </div>
+
+          <button className={style.botao} type="submit">
+            {" "}
+            Filtrar{" "}
+          </button>
         </div>
       </form>
-     
-      <div  className={style.flex}>
-      <button className={style.botao} onClick={limpar}>
-        Limpar Filtros
-      </button>
-      {filtro && <Filtro queryBuilder={queryBuilder} />}
-      {!filtro && (
-        <div>
-          <table>
-            <tr>
-              <td>Conta</td>
-              <td>valor</td>
-              <td>Data</td>
-            </tr>
 
-            {loading &&
-              extrato.map((element) => {
-                const date = new Date(element.createdAt);
-                let dd = date.getDate();
-                let mm = date.getMonth();
-                let yyy = date.getFullYear();
-                let data = `${dd + 1}/${mm + 1}/${yyy}`;
-                let conta = 0;
-                let valor = "";
+      <div className={style.flex}>
+        <button className={style.botao} onClick={limpar}>
+          Limpar Filtros
+        </button>
+        {filtro && <Filtro queryBuilder={queryBuilder} />}
+        {!filtro && (
+          <div>
+            <table>
+              <tr>
+                <th>Conta</th>
+                <th>Valor</th>
+                <th>Data</th>
+              </tr>
 
-                if (element.creditedAccountId.id === user.id) {
-                  conta = element.debitedAccountId.id;
-                  valor = `+ ${element.value}`;
-                }
+              {loading &&
+                extrato.map((element) => {
+                  const date = new Date(element.createdAt);
+                  let dd = date.getDate();
+                  let mm = date.getMonth();
+                  let yyy = date.getFullYear();
+                  let data = `${dd + 1}/${mm + 1}/${yyy}`;
+                  let conta = 0;
+                  let valor = "";
 
-                if (element.debitedAccountId.id === user.id) {
-                  conta = element.creditedAccountId.id;
-                  valor = `- ${element.value}`;
-                }
+                  if (element.creditedAccountId.id === user.id) {
+                    conta = element.debitedAccountId.id;
+                    valor = `+ ${element.value}`;
+                  }
 
-                return (
-                  <>
-                    <tr>
-                      <td>{conta}</td>
-                      <td style={{ color: valor[0] === "+" ? "blue" : "red" }}>
-                        {valor}
-                      </td>
-                      <td>{data}</td>
-                    </tr>
-                  </>
-                );
-              })}
-          </table>
-        </div>
-      )}
+                  if (element.debitedAccountId.id === user.id) {
+                    conta = element.creditedAccountId.id;
+                    valor = `- ${element.value}`;
+                  }
+
+                  return (
+                    <>
+                      <tr>
+                        <td>{conta}</td>
+                        <td
+                          style={{ color: valor[0] === "+" ? "blue" : "red" }}
+                        >
+                          {valor}
+                        </td>
+                        <td>{data}</td>
+                      </tr>
+                    </>
+                  );
+                })}
+            </table>
+          </div>
+        )}
       </div>
     </>
   );

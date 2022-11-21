@@ -57,9 +57,7 @@
 
 }
 
-.formsize{
 
-}
 
 .bgimage{
     background-image: url("../../assets/imgs/bglogin.png");
@@ -78,4 +76,44 @@
     padding-top: 20px;
     border-radius: 5px;
     
+}
+
+
+@media all and (min-width:576px) and (max-width:767px){
+    .bgimage{
+        background-color: black;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    
+        
+    }
+   
+}
+
+@media all and (min-width:768px) and (max-width:991px){
+    .bgimage{
+        background-color: black;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    
+        
+    }
+    
+}
+
+@media all and (min-width: 992px) {
+  
+    .bgimage{
+        background-color: black;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    
+        
+    }
 }
