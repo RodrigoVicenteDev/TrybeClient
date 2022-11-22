@@ -36,7 +36,7 @@ function Filtro({ queryBuilder }: Props) {
       try {
         const response = await api.get(`/search/?${queryBuilder}`);
         setExtrato(response.data);
-        console.log(response);
+       
       } catch (error) {
         console.log(error);
       }
@@ -45,7 +45,7 @@ function Filtro({ queryBuilder }: Props) {
     fetchuextrato();
   }, [queryBuilder]);
 
-  
+
   return (
     <>
       <div>
@@ -78,7 +78,7 @@ function Filtro({ queryBuilder }: Props) {
 
               return (
                 <>
-                  <tr>
+                  <tr key={element.id}>
                     <td>{conta}</td>
                     <td style={{ color: valor[0] === "+" ? "blue" : "red" }}>
                       {valor}

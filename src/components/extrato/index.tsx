@@ -187,7 +187,7 @@ function Extrato({ reload, setReload }: Props) {
 
                   return (
                     <>
-                      <tr>
+                      <tr key={element.id}>
                         <td>{conta}</td>
                         <td
                           style={{ color: valor[0] === "+" ? "blue" : "red" }}

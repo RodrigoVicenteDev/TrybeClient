@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { api } from "../../config/api";
 import  style from "./style.module.css"
+import {useNavigate} from "react-router-dom"
 
 interface Props {
   reload: boolean;
@@ -17,6 +18,7 @@ interface User {
 }
 
 function Saldo({ reload, setReload }: Props) {
+    const navigate = useNavigate();
   const [user, setUser] = useState<User>({} as User);
   const [loading, setloading] = useState(false);
 
@@ -34,13 +36,19 @@ function Saldo({ reload, setReload }: Props) {
     fetchuser();
     
   }, [reload]);
+  function sair(){
+    localStorage.clear()
+    navigate("/ ")
+  }
 
-  console.log(user);
+ 
   return <> {loading&& 
     <>
     <h1>Bem-vindo, {user.username}</h1>
 
-  <h2 className={style.saldo}>Saldo: {user.accounts.balance}</h2></>} </>;
+  <h2 className={style.saldo}>Saldo: {user.accounts.balance}</h2>
+  <h4 onClick={sair}>SAIR</h4></>
+  } </>;
 }
 
 export default Saldo;

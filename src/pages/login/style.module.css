@@ -60,7 +60,7 @@
 
 
 .bgimage{
-   /*  background-image: url("../../assets/imgs/bglogin.png"); */
+  
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -70,7 +70,7 @@
     
 }
 .bgimage2{
-     background-image: url("../../assets/imgs/logo.png");
+   
      background-size:auto;
      background-repeat: no-repeat;
      height: 30vh;
@@ -115,7 +115,7 @@
         font-size: 55px;
        }
     .bgimage{
-        /*  background-image: url("../../assets/imgs/bglogin.png"); */
+      
          background-size: cover;
          height: 100vh;
          width: 50vw;

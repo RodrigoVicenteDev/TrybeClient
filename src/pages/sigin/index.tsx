@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Link} from "react-router-dom"  
+import {Link, useNavigate} from "react-router-dom"  
 import { api } from "../../config/api";
 import style from "./style.module.css";
 
@@ -10,6 +10,7 @@ interface Form {
 }
 
 function Sigin() {
+  const navigate = useNavigate();
   const [versenha, setVersenha] = useState(false);
   const [form, setForm] = useState<Form>({
     username: "",
@@ -32,6 +33,7 @@ function Sigin() {
       try {
         delete form.confirmpassword;
         await api.post("/sigin", { ...form });
+        navigate("/")
       } catch (error) {
         console.log(error);
       }
